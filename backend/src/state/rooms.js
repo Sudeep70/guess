@@ -16,11 +16,12 @@ function getRooms() {
 
 // ─── Room Lifecycle ───────────────────────────────────────────────────────────
 
-function createRoom(roomCode, hostSocketId, hostName) {
+function createRoom(roomCode, hostSocketId, hostName, difficulty = 'medium') {
   rooms[roomCode] = {
     roomCode,
     hostSocketId,
     status: 'waiting', // waiting | starting | drawing | roundEnd | gameOver
+    difficulty,
     players: {
       [hostSocketId]: createPlayer(hostSocketId, hostName),
     },

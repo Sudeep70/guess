@@ -63,8 +63,9 @@ function getBank(level) {
 }
 
 function getRandomWords(level = "medium", count = 3) {
-  const bank = getBank(level);
-  const used = usedWords[level];
+  const normalizedLevel = usedWords[level] ? level : "medium";
+  const bank = getBank(normalizedLevel);
+  const used = usedWords[normalizedLevel];
 
   const available = bank.filter((w) => !used.has(w));
 

@@ -17,3 +17,5 @@ frontend/dist/
 
 # Misc
 coverage/
+# jest
+coverage/
